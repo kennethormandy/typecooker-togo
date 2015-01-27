@@ -33,7 +33,7 @@ angular.module('starter.controllers', [])
     return result;
   }
 
-  $scope.parameters = 'Loading…';
+  $scope.parameters = null;
   Parameters.success(function(data) {
     // TODO: Difficulty is hard-coded right now
     $scope.parameters = generateTypeCooker(data.parametersData, 2);
