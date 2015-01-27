@@ -1,12 +1,6 @@
 angular.module('starter.controllers', [])
 
 .controller('ParametersCtrl', function($scope, Parameters) {
-  function range(begin, end) {
-    for (var i = begin; i < end; ++i) {
-      return i;
-    }
-  }
-
   // MIT via http://git.io/F3Hx
   var generateTypeCooker = function(data, level) {
     var result = [];
