@@ -33,12 +33,18 @@ angular.module('starter.controllers', [])
     return result;
   }
 
-  $scope.parameters = null;
+  $scope.parameters = 'Loading…';
   Parameters.success(function(data) {
     // TODO: Difficulty is hard-coded right now
     $scope.parameters = generateTypeCooker(data.parametersData, 2);
-
+    $scope.doRefresh = function() {
+      $scope.parameters = null;
+      $scope.parameters = generateTypeCooker(data.parametersData, 2);
+      $scope.$broadcast('scroll.refreshComplete');
+      $scope.$apply();
+    };
   })
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
