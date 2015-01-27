@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('ParametersCtrl', function($scope, Parameters) {
+.controller('ParametersCtrl', function($scope, Parameters, DataStore) {
   // MIT via http://git.io/F3Hx
   var generateTypeCooker = function(data, level) {
     var result = [];
@@ -28,40 +28,29 @@ angular.module('starter.controllers', [])
   }
 
   $scope.parameters = 'Loading…';
-  Parameters.success(function(data) {
-    // TODO: Difficulty is hard-coded right now
-    $scope.parameters = generateTypeCooker(data.parametersData, 2);
-    $scope.doRefresh = function() {
-      $scope.parameters = null;
-      $scope.parameters = generateTypeCooker(data.parametersData, 2);
-      $scope.$broadcast('scroll.refreshComplete');
-      $scope.$apply();
-    };
-  })
-
+  Parameters
+    .success(function(data) {
+      // TODO: Difficulty is hard-coded right now
+      $scope.parameters = generateTypeCooker(data.parametersData, DataStore.difficulty.value);
+      $scope.refresh = function() {
+        $scope.parameters = null;
+        $scope.parameters = generateTypeCooker(data.parametersData, DataStore.difficulty.value);
+        $scope.$broadcast('scroll.refreshComplete');
+        $scope.$apply();
+      };
+    })
+    .error(function(data, status, headers, config) {
+      console.error('ERR', data);
+    });
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
-
-// .controller('ByStyleDetailCtrl', function($scope, $stateParams, Chats) {
-//   $scope.chat = Chats.get($stateParams.chatId);
-// })
-
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, Difficulties, DataStore) {
   $scope.settings = {
     enableFriends: true,
-    difficulties: [
-      { name: 'Starter',     'value': 1 },
-      { name: 'Easy',        'value': 2 },
-      { name: 'Class',       'value': 3 },
-      { name: 'Experienced', 'value': 4 },
-      { name: 'Pro',         'value': 5 }
-    ],
+    difficulties: Difficulties.all()
   };
-  $scope.settings.difficulty = $scope.settings.difficulties[1]
+  $scope.settings.difficulty = DataStore.difficulty;
+  $scope.updateDifficulty = function() {
+    DataStore.setDifficulty($scope.settings.difficulty.value);
+  }
 });

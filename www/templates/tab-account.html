@@ -14,7 +14,10 @@
         <div class="input-label">
           Difficulty
         </div>
-        <select ng-model="settings.difficulty" ng-options="diff.name for diff in settings.difficulties">
+        <select
+          ng-model="settings.difficulty"
+          ng-options="diff.name for diff in settings.difficulties"
+          ng-change="updateDifficulty()">
         </select>
       </label>
     </ion-list>
