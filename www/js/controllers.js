@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('AccountCtrl', function($scope, Difficulties, DataStore) {
+.controller('SettingsCtrl', function($scope, Difficulties, DataStore) {
   $scope.settings = {
     enableFriends: true,
     difficulties: Difficulties.all()
