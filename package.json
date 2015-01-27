@@ -17,7 +17,7 @@
   "scripts": {
     "postinstall": "cp ./node_modules/typecooker-ingredients/index.json ./www/js/data.json",
     "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/typecooker-togo are greatly appreciated.\" && exit 1",
-    "start": "ionic serve"
+    "start": "gulp && ionic serve"
   },
   "dependencies": {
     "gulp": "^3.5.6",
