@@ -54,6 +54,14 @@ angular.module('starter.controllers', [])
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
-    enableFriends: true
+    enableFriends: true,
+    difficulties: [
+      { name: 'Starter',     'value': 1 },
+      { name: 'Easy',        'value': 2 },
+      { name: 'Class',       'value': 3 },
+      { name: 'Experienced', 'value': 4 },
+      { name: 'Pro',         'value': 5 }
+    ],
   };
+  $scope.settings.difficulty = $scope.settings.difficulties[1]
 });

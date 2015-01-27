@@ -10,6 +10,13 @@
           </div>
         </label>
       </ion-item>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Difficulty
+        </div>
+        <select ng-model="settings.difficulty" ng-options="diff.name for diff in settings.difficulties">
+        </select>
+      </label>
     </ion-list>
   </ion-content>
 </ion-view>
