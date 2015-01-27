@@ -5,6 +5,7 @@
   "homepage": "https://typecooker.com",
   "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
   "license": "MIT",
+  "private": true,
   "repository": "git@github.com:kennethormandy/typecooker-togo.git",
   "keywords": [
     "type",
