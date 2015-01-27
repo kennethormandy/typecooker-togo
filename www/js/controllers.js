@@ -15,6 +15,7 @@ angular.module('starter.controllers', [])
           // TODO: Account for weighting
           // for(weightCount in range(item.weight)) {
             item.key = key;
+            item.keyIndex = index + 1;
             pool.push(item);
           // }
         }

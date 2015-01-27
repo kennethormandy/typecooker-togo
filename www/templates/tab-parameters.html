@@ -5,10 +5,16 @@
       on-refresh="refresh()">
     </ion-refresher>
     <ion-list>
-      <ion-item class="item item-avatar" ng-repeat="param in parameters" type="item-text-wrap">
-        <img ng-src="http://placehold.it/500x500">
-        <p>{{param.key}}</p>
-        <h2>{{param.name}}</h2>
+      <ion-item class="item" ng-repeat="param in parameters" type="item-text-wrap">
+        <div class="row">
+          <div class="col">
+            <h1>{{param.keyIndex}}</h1>
+          </div>
+          <div class="col col-75">
+            <p>{{param.key}}</p>
+            <h2>{{param.name}}</h2>
+          </div>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
