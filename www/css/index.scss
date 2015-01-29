@@ -21,6 +21,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "../lib/ionic/scss/ionic";
 
+// Not sure if this is already taken care of or not
+html { -webkit-text-size-adjust: 100%; }
+.platform-ios6 {
+    .bar {
+      height: 64px;
+    }
+    .title {
+      margin-top: 20px;
+    }
+    .has-header {
+      top: 64px;
+    }
+}
+
 // http://forum.ionicframework.com/t/placing-select-box-inside-footer-bar/15356
 .bar-footer label {
   width: 100%;
