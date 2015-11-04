@@ -29,8 +29,8 @@
     "typecooker-ingredients": "^0.1.0"
   },
   "devDependencies": {
-    "bower": "^1.3.3",
     "gulp-util": "^2.2.14",
+    "ionic": "1.6.4",
     "shelljs": "^0.3.0",
     "surge": "^0.5.2"
   }
