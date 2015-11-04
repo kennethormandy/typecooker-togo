@@ -22,7 +22,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "../lib/ionic/scss/ionic";
 
 // Not sure if this is already taken care of or not
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
 .platform-ios6 {
     .bar {
       height: 64px;
