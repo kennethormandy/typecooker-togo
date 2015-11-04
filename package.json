@@ -18,7 +18,7 @@
     "postinstall": "cp ./node_modules/typecooker-ingredients/index.json ./www/js/data.json",
     "test": "echo \"Error: no test specified…yet! Pull requests on kennethormandy/typecooker-togo are greatly appreciated.\" && exit 1",
     "start": "gulp && ionic serve",
-    "deploy": "surge ./www typecooker-togo.surge.sh"
+    "deploy": "surge ./www typecooker-togo.kennethormandy.com"
   },
   "dependencies": {
     "gulp": "^3.5.6",
@@ -32,6 +32,6 @@
     "gulp-util": "^2.2.14",
     "ionic": "1.6.4",
     "shelljs": "^0.3.0",
-    "surge": "^0.5.2"
+    "surge": "latest"
   }
 }
