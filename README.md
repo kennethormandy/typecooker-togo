@@ -1,3 +1,5 @@
+![](preview.gif)
+
 # TypeCooker ToGo
 
 A small TypeCooker app for mobile devices.
